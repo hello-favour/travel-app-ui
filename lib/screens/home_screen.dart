@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app_ui/constants/icons_path.dart';
+import 'package:travel_app_ui/constants/image_path.dart';
+import 'package:travel_app_ui/themes/app_colors.dart';
+import 'package:travel_app_ui/themes/card_padding.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,8 +13,190 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var height, width;
+
+  List iconImages = [
+    IconsPath.flight,
+    IconsPath.condo,
+    IconsPath.plate,
+    IconsPath.frontBus,
+    IconsPath.flight,
+    IconsPath.condo,
+    IconsPath.plate,
+    IconsPath.frontBus,
+  ];
   @override
   Widget build(BuildContext context) {
-    return Container();
+    width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          height: height,
+          width: width,
+          color: AppColors.appWhite,
+          child: Column(
+            children: [
+              SizedBox(height: height * 0.035),
+              SizedBox(
+                width: width * 0.9,
+                height: height * 0.07,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Explore",
+                          style: GoogleFonts.lexend(
+                            fontSize: width * 0.059,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.appBlack,
+                          ),
+                        ),
+                        Text(
+                          "Explore your world Beauty",
+                          style: GoogleFonts.lexend(
+                            fontSize: width * 0.037,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: height * 0.35),
+                    Container(
+                      height: height * 0.035,
+                      width: width * 0.11,
+                      decoration: BoxDecoration(
+                        borderRadius: CardPadding.appRadius,
+                        color: AppColors.appWhite,
+                        image: const DecorationImage(
+                          image: AssetImage(ImagePath.girl),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              Container(
+                height: height * 0.073,
+                width: width * 0.9,
+                decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(0.3),
+                  borderRadius: CardPadding.appRadius,
+                ),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: width * 0.03),
+                    child: TextFormField(
+                      style: const TextStyle(
+                        color: AppColors.appWhite,
+                      ),
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Search here...",
+                        hintStyle: GoogleFonts.lexend(
+                          color: Colors.grey,
+                          fontSize: width * 0.04,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.black54,
+                          size: width * 0.09,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: height * 0.035),
+              SizedBox(
+                height: height * 0.08,
+                child: ListView.builder(
+                  itemCount: iconImages.length,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: CardPadding.appRadius,
+                        ),
+                        child: Container(
+                          width: width * 0.14,
+                          height: 0.068,
+                          decoration: BoxDecoration(
+                            borderRadius: CardPadding.appRadius,
+                            color: Colors.blue,
+                          ),
+                          child: Center(
+                            child: Image(
+                              height: height * 0.04,
+                              color: AppColors.appWhite,
+                              image: AssetImage(
+                                iconImages[index],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: height * 0.035),
+              SizedBox(
+                width: width * 0.9,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "New",
+                      style: GoogleFonts.lexend(
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Text(
+                      "Tours",
+                      style: GoogleFonts.lexend(
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primaryColors,
+                      ),
+                    ),
+                    Text(
+                      "Asia",
+                      style: GoogleFonts.lexend(
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Text(
+                      "Adventure",
+                      style: GoogleFonts.lexend(
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

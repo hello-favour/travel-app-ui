@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app_ui/components/app_text.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
 import 'package:travel_app_ui/screens/home_screen.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
