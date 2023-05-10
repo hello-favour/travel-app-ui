@@ -25,6 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
     IconsPath.plate,
     IconsPath.frontBus,
   ];
+
+  List imgs = [
+    ImagePath.aroplane,
+    ImagePath.bg,
+    ImagePath.girl,
+    ImagePath.girlTravel,
+    ImagePath.world,
+  ];
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -135,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 0.068,
                           decoration: BoxDecoration(
                             borderRadius: CardPadding.appRadius,
-                            color: Colors.blue,
+                            color: AppColors.primaryColors,
                           ),
                           child: Center(
                             child: Image(
@@ -158,6 +166,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Text(
+                      "All",
+                      style: GoogleFonts.lexend(
+                        fontSize: width * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black54,
+                      ),
+                    ),
                     Text(
                       "New",
                       style: GoogleFonts.lexend(
@@ -193,6 +209,38 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: height * 0.035),
+              SizedBox(
+                height: height * 0.44,
+                width: width,
+                child: ListView.builder(
+                  itemCount: imgs.length,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: width * 0.05, vertical: height * 0.01),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: width * 0.6,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: AppColors.appWhite,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                imgs[index],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
