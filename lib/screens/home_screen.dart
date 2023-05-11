@@ -1,6 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app_ui/constants/icons_path.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
+import 'package:travel_app_ui/screens/place_order_screen.dart';
+import 'package:travel_app_ui/screens/place_screen.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
 import 'package:travel_app_ui/themes/card_padding.dart';
 import 'package:flutter/material.dart';
@@ -224,7 +226,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: EdgeInsets.symmetric(
                             horizontal: width * 0.05, vertical: height * 0.01),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const PlaceOrderScreen();
+                            }));
+                          },
                           child: Container(
                             width: width * 0.6,
                             decoration: BoxDecoration(
