@@ -1,7 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app_ui/constants/icons_path.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
-import 'package:travel_app_ui/screens/place_order_screen.dart';
+import 'package:travel_app_ui/screens/place_screen.dart';
 import 'package:travel_app_ui/screens/place_screen.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
 import 'package:travel_app_ui/themes/card_padding.dart';
@@ -229,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const PlaceOrderScreen();
+                              return const PlaceScreen();
                             }));
                           },
                           child: Container(
