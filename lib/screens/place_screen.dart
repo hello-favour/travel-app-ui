@@ -5,14 +5,14 @@ import 'package:travel_app_ui/constants/icons_path.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
 
-class PlaceOrderScreen extends StatefulWidget {
-  const PlaceOrderScreen({super.key});
+class PlaceScreen extends StatefulWidget {
+  const PlaceScreen({super.key});
 
   @override
-  State<PlaceOrderScreen> createState() => _PlaceOrderScreenState();
+  State<PlaceScreen> createState() => _PlaceScreenState();
 }
 
-class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
+class _PlaceScreenState extends State<PlaceScreen> {
   var height, width;
   @override
   Widget build(BuildContext context) {
