@@ -2,7 +2,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app_ui/constants/icons_path.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
 import 'package:travel_app_ui/screens/place_screen.dart';
-import 'package:travel_app_ui/screens/place_screen.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
 import 'package:travel_app_ui/themes/card_padding.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ImagePath.girlTravel,
     ImagePath.world,
   ];
+
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -306,26 +306,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: height * 0.035),
+                // SizedBox(height: height * 0.035),
               ],
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: AppColors.primaryColors,
-          iconSize: 30,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          selectedFontSize: 16,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: "Notification"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Setting"),
-          ],
         ),
       ),
     );

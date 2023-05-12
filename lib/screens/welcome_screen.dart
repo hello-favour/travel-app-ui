@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app_ui/components/nav_bar.dart';
 import 'package:travel_app_ui/constants/image_path.dart';
 import 'package:travel_app_ui/screens/home_screen.dart';
 import 'package:travel_app_ui/themes/app_colors.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
   var height, width;
 
   @override
@@ -53,7 +60,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const HomeScreen();
+                        return const NavBar();
                       }));
                     },
                     child: Container(
