@@ -23,7 +23,7 @@ class _SearchScreenState extends State<SearchScreen> {
           height: height * 0.073,
           width: width * 0.9,
           decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.3),
+            color: Colors.grey.shade200,
             borderRadius: CardPadding.appRadius,
           ),
           child: Center(
