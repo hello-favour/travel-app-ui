@@ -39,9 +39,6 @@ class _SettingScreenState extends State<SettingScreen> {
           width: width,
           child: Column(
             children: [
-              // const Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 8),
-              // ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
